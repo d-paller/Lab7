@@ -25,7 +25,7 @@ public class TestBinarySearchTree {
       
       System.out.println("Inserted: " + key);
       tree.insert(key);
-      //tree.inorder();
+      tree.inorder();
       
       System.out.print("Preorder-"); tree.preorder();
       System.out.println("");
@@ -41,26 +41,26 @@ public class TestBinarySearchTree {
       }
       System.out.println("");
       
-      System.out.print("The left subtree of 59 is: ");
-      ArrayList<Integer> LSubTree= tree.leftSubTree(59);
+      System.out.print("The left subtree of 43 is: ");
+      ArrayList<Integer> LSubTree= tree.leftSubTree(43);
       for (int i = 0; i < LSubTree.size(); i++) {
-          System.out.println(LSubTree.get(i) + " ");
+          System.out.print(LSubTree.get(i) + " ");
           
       }
       System.out.println("");
       
-      System.out.print("The right subtree of 46 is: ");
+      System.out.print("The right subtree of 43 is: ");
       ArrayList<Integer> RsubTree = tree.rightSubTree(43);
       for (int i = 0; i < RsubTree.size(); i++) {
-          System.out.println(RsubTree.get(i) + " ");
+          System.out.print(RsubTree.get(i) + " ");
           
       }
       System.out.println("");
       
       System.out.print("There are " + tree.getNumberOfLeaves() + " leaves");
-      System.out.println("");
+      System.out.println("\n");
       
-      //System.out.println("The indorer predessecor of 59 is: " + tree.inorderPredecessor(59));
+      System.out.println("The indorer predessecor of 59 is: " + tree.inorderPredecessor(59));
      
   }//main
 }//class
