@@ -272,13 +272,22 @@ public class BinarySearchTree<E extends Comparable<E>> extends AbstractTree<E> {
     /* Returns the inorder predecessor of the specified element */
     public E inorderPredecessor(E e){
     
-        ArrayList<E> empty = new ArrayList<>();
-        ArrayList<E> list = inorder(root, empty);
-        int index = list.indexOf(e);
-        
-            return list.get(1 - index);
-        
+        TreeNode<E> current = root; // Start from the root
+        TreeNode<E> temp = null;
+    while (current != null) {
+        if (e.compareTo(current.element) < 0) {
+            temp = current;
+            current = current.left;
+        }
+        else if (e.compareTo(current.element) > 0) {
+            temp = current;
+            current = current.right;
+        }
+        else // element matches current.element
+            return temp.element;
     }
+    return null;
+  }
     
     
   /** Delete an element from the binary tree.
